@@ -2,6 +2,7 @@ import 'package:barbershope/pages/booking.dart';
 import 'package:barbershope/pages/home.dart';
 import 'package:barbershope/pages/login.dart';
 import 'package:barbershope/pages/onboarding.dart';
+import 'package:barbershope/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LogIn(),
+      home: SignUp(),
     );
   }
 }

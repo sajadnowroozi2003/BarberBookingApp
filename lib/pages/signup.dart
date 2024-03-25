@@ -1,14 +1,14 @@
-import 'package:barbershope/pages/signup.dart';
+import 'package:barbershope/pages/login.dart';
 import 'package:flutter/material.dart';
 
-class LogIn extends StatefulWidget {
-  const LogIn({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<LogIn> createState() => _LogInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LogInState extends State<LogIn> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,7 @@ class _LogInState extends State<LogIn> {
                 ),
               ),
               child: Text(
-                "Hello\nSign in!",
+                "Create Your\nAccount",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 32.0,
@@ -54,6 +54,21 @@ class _LogInState extends State<LogIn> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
+                      "Name",
+                      style: TextStyle(
+                          color: Color(0xFFB91635),
+                          fontSize: 23.0,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                          hintText: "Name",
+                          prefixIcon: Icon(Icons.person_outline)),
+                    ),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    Text(
                       "Email",
                       style: TextStyle(
                           color: Color(0xFFB91635),
@@ -77,21 +92,6 @@ class _LogInState extends State<LogIn> {
                     SizedBox(
                       height: 30.0,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Forgot password?",
-                          style: TextStyle(
-                              color: Color(0xFF311937),
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 60.0,
-                    ),
                     Container(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       width: MediaQuery.of(context).size.width,
@@ -107,7 +107,7 @@ class _LogInState extends State<LogIn> {
                       ),
                       child: Center(
                         child: Text(
-                          "SIGN IN",
+                          "SIGN UP",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 24.0,
@@ -120,7 +120,7 @@ class _LogInState extends State<LogIn> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          "don't have account?",
+                          "Already have an account?",
                           style: TextStyle(
                               color: Color(0xFF311937),
                               fontSize: 17.0,
@@ -133,7 +133,7 @@ class _LogInState extends State<LogIn> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SignUp(),
+                            builder: (context) => LogIn(),
                           ),
                         );
                       },
@@ -141,7 +141,7 @@ class _LogInState extends State<LogIn> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            "Sign Up",
+                            "Sign In",
                             style: TextStyle(
                                 color: Color(0xFF621d3c),
                                 fontSize: 22.0,
