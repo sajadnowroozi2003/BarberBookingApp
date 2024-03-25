@@ -1,4 +1,6 @@
+import 'package:barbershope/pages/booking.dart';
 import 'package:barbershope/pages/home.dart';
+import 'package:barbershope/pages/onboarding.dart';
 import 'package:flutter/material.dart';
 
 void main() {

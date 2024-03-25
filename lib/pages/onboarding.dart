@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 class Onboearding extends StatefulWidget {
   const Onboearding({super.key});
 
@@ -20,19 +22,30 @@ class _OnboeardingState extends State<Onboearding> {
               SizedBox(
                 height: 60.0,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                decoration: BoxDecoration(
-                    color: Color(0xFFdf711a),
-                    borderRadius: BorderRadius.circular(30)),
-                child: Text(
-                  "Get a Stylish Haircut",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Home(),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                  decoration: BoxDecoration(
+                      color: Color(0xFFdf711a),
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Text(
+                    "Get a Stylish Haircut",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
-              )
+              ),
             ],
           )),
     );
