@@ -85,6 +85,21 @@ class _SignUpState extends State<SignUp> {
                         height: 40.0,
                       ),
                       Text(
+                        "Phone",
+                        style: TextStyle(
+                            color: Color(0xFFF8FAE5),
+                            fontSize: 23.0,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                            hintText: "Phone",
+                            prefixIcon: Icon(Icons.phone_android_outlined)),
+                      ),
+                      SizedBox(
+                        height: 40.0,
+                      ),
+                      Text(
                         "Password",
                         style: TextStyle(
                             color: Color(0xFFF8FAE5),
@@ -156,6 +171,7 @@ class _SignUpState extends State<SignUp> {
                               "Sign In",
                               style: TextStyle(
                                   color: Color(0xFFF8FAE5),
+                                  decoration: TextDecoration.underline,
                                   fontSize: 22.0,
                                   fontWeight: FontWeight.bold),
                             ),
