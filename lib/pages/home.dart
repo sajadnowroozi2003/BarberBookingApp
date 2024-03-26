@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2b1615),
+      backgroundColor: Color(0xFFB0C5A4),
       body: Container(
         margin: EdgeInsets.only(left: 20.0, top: 50.0, right: 20.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
           Text(
             "Services",
             style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFFF8FAE5),
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold),
           ),
@@ -85,7 +85,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     height: 150.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFFe29452),
+                      color: Color(0xFFB19470),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Column(
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                         Text(
                           "Classic Shaving",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFFF8FAE5),
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold),
                         ),
@@ -129,7 +129,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     height: 150.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFFe29452),
+                      color: Color(0xFFB19470),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Column(
@@ -147,7 +147,7 @@ class _HomeState extends State<Home> {
                         Text(
                           "Hair Washing",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFFF8FAE5),
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold),
                         ),
@@ -177,7 +177,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     height: 150.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFFe29452),
+                      color: Color(0xFFB19470),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Column(
@@ -195,7 +195,7 @@ class _HomeState extends State<Home> {
                         Text(
                           "Hair Cutting",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFFF8FAE5),
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold),
                         ),
@@ -222,7 +222,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     height: 150.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFFe29452),
+                      color: Color(0xFFB19470),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Column(
@@ -240,7 +240,7 @@ class _HomeState extends State<Home> {
                         Text(
                           "Beard Trimming",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFFF8FAE5),
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold),
                         ),
@@ -270,7 +270,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     height: 150.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFFe29452),
+                      color: Color(0xFFB19470),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Column(
@@ -288,7 +288,7 @@ class _HomeState extends State<Home> {
                         Text(
                           "Facials",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFFF8FAE5),
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold),
                         ),
@@ -315,7 +315,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     height: 150.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFFe29452),
+                      color: Color(0xFFB19470),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Column(

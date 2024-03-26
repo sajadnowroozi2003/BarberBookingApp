@@ -41,7 +41,7 @@ class _BookingState extends State<Booking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2b1615),
+      backgroundColor: Color(0xFFB0C5A4),
       body: Container(
         margin: EdgeInsets.only(left: 10.0, right: 10.0),
         child: Column(
@@ -55,7 +55,7 @@ class _BookingState extends State<Booking> {
                 padding: const EdgeInsets.only(top: 50.0),
                 child: Icon(
                   Icons.arrow_back_ios_new_rounded,
-                  color: Colors.white,
+                  color: Color(0xFFF8FAE5),
                   size: 30.0,
                 ),
               ),
@@ -86,7 +86,7 @@ class _BookingState extends State<Booking> {
             Text(
               widget.service,
               style: TextStyle(
-                  color: Colors.white,
+                  color: Color(0xFFF8FAE5),
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold),
             ),
@@ -96,9 +96,7 @@ class _BookingState extends State<Booking> {
             Container(
               padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
               decoration: BoxDecoration(
-                  color: Color(
-                    0xFFb4817e,
-                  ),
+                  color: Color(0xFFB19470),
                   borderRadius: BorderRadius.circular(20)),
               width: MediaQuery.of(context).size.width,
               child: Column(children: [
@@ -145,9 +143,7 @@ class _BookingState extends State<Booking> {
             Container(
               padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
               decoration: BoxDecoration(
-                  color: Color(
-                    0xFFb4817e,
-                  ),
+                  color: Color(0xFFB19470),
                   borderRadius: BorderRadius.circular(20)),
               width: MediaQuery.of(context).size.width,
               child: Column(children: [

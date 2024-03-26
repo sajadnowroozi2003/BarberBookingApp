@@ -17,23 +17,23 @@ class _SignUpState extends State<SignUp> {
           child: Stack(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 60.0, left: 30.0),
-                height: MediaQuery.of(context).size.height / 1,
+                padding: EdgeInsets.only(top: 70.0, left: 30.0),
+                height: MediaQuery.of(context).size.height / 2,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color(0xFFB91635),
-                      Color(0xFF621d3c),
-                      Color(0xFF311937),
+                      Color(0xFFFA7070),
+                      Color(0xFFC6EBC5),
                     ],
                   ),
                 ),
                 child: Text(
-                  "Create Your\nAccount",
+                  "CREATE YOUR\nACCOUNT",
                   style: TextStyle(
+                      fontFamily: 'lobster',
                       color: Colors.white,
-                      fontSize: 32.0,
+                      fontSize: 40.0,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -41,11 +41,11 @@ class _SignUpState extends State<SignUp> {
                 padding: EdgeInsets.only(
                     top: 40.0, left: 30.0, right: 30.0, bottom: 30.0),
                 margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 5),
+                    top: MediaQuery.of(context).size.height / 4),
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Color(0xFFB0C5A4),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40.0),
                     topRight: Radius.circular(40.0),
@@ -57,7 +57,7 @@ class _SignUpState extends State<SignUp> {
                       Text(
                         "Name",
                         style: TextStyle(
-                            color: Color(0xFFB91635),
+                            color: Color(0xFFF8FAE5),
                             fontSize: 23.0,
                             fontWeight: FontWeight.w500),
                       ),
@@ -72,7 +72,7 @@ class _SignUpState extends State<SignUp> {
                       Text(
                         "Email",
                         style: TextStyle(
-                            color: Color(0xFFB91635),
+                            color: Color(0xFFF8FAE5),
                             fontSize: 23.0,
                             fontWeight: FontWeight.w500),
                       ),
@@ -83,6 +83,13 @@ class _SignUpState extends State<SignUp> {
                       ),
                       SizedBox(
                         height: 40.0,
+                      ),
+                      Text(
+                        "Password",
+                        style: TextStyle(
+                            color: Color(0xFFF8FAE5),
+                            fontSize: 23.0,
+                            fontWeight: FontWeight.w500),
                       ),
                       TextField(
                         obscureText: true,
@@ -99,9 +106,8 @@ class _SignUpState extends State<SignUp> {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              Color(0xFFB91635),
-                              Color(0xFF621d3c),
-                              Color(0xFF311937),
+                              Color(0xFFFA7070),
+                              Color(0xFFC6EBC5),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(30.0),
@@ -125,7 +131,7 @@ class _SignUpState extends State<SignUp> {
                           Text(
                             "Already have an account?",
                             style: TextStyle(
-                                color: Color(0xFF311937),
+                                color: Color(0xFFF8FAE5),
                                 fontSize: 17.0,
                                 fontWeight: FontWeight.w500),
                           ),
@@ -149,7 +155,7 @@ class _SignUpState extends State<SignUp> {
                             Text(
                               "Sign In",
                               style: TextStyle(
-                                  color: Color(0xFF621d3c),
+                                  color: Color(0xFFF8FAE5),
                                   fontSize: 22.0,
                                   fontWeight: FontWeight.bold),
                             ),

@@ -13,12 +13,13 @@ class _OnboeardingState extends State<Onboearding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2b1615),
+      backgroundColor: Color(0xFFB0C5A4),
       body: Container(
           margin: EdgeInsets.only(top: 120.0),
           child: Column(
             children: [
-              Image.asset("images/barber-removebg.png"),
+              Image.asset("images/barber2.png"),
+              Image.asset("images/barbertitle.png"),
               SizedBox(
                 height: 60.0,
               ),
