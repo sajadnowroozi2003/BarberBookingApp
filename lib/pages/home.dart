@@ -1,4 +1,6 @@
 import 'package:barbershope/pages/booking.dart';
+import 'package:barbershope/services/auth_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -9,6 +11,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,14 +42,16 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-              ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
-                  child: Image.asset(
-                    "images/sajad.jpg",
-                    height: 70.0,
-                    width: 70.0,
-                    fit: BoxFit.cover,
-                  ))
+              IconButton(
+                onPressed: () {
+                  if (Navigator.canPop(context)) {
+                    Navigator.pop(context);
+                  }
+
+                  AuthService().signOut();
+                },
+                icon: Icon(Icons.logout),
+              ),
             ],
           ),
           SizedBox(

@@ -2,8 +2,12 @@
 // import 'package:barbershope/pages/home.dart';
 import 'dart:math';
 
+import 'package:barbershope/pages/booking.dart';
+import 'package:barbershope/pages/home.dart';
 import 'package:barbershope/pages/login.dart';
 import 'package:barbershope/pages/onboarding.dart';
+import 'package:barbershope/services/auth_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:barbershope/pages/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,9 +28,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LogIn(),
-    );
+    return StreamBuilder<User?>(
+        stream: AuthService().authStateChanges,
+        builder: (context, snapshot) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            // routes: {
+            //   '/': (context) => LogIn(),
+            //   '/onboarding': (context) => Onboearding(),
+            //   '/home': (context) => Home(),
+            //   '/booking': (context) => Booking(service: ''),
+            // },
+            home:
+                AuthService().getCurrentUser != null ? Onboearding() : LogIn(),
+          );
+        });
   }
 }

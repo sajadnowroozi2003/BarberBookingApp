@@ -1,3 +1,4 @@
+import 'package:barbershope/constans.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -27,7 +28,7 @@ class _OnboeardingState extends State<Onboearding>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFB0C5A4).withOpacity(controller!.value),
+      backgroundColor: KbackgroundColor.withOpacity(controller!.value),
       body: Container(
           margin: EdgeInsets.only(top: 120.0),
           child: Column(
@@ -50,7 +51,15 @@ class _OnboeardingState extends State<Onboearding>
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                   decoration: BoxDecoration(
-                      color: Color(0xFFdf711a),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 6),
+                        ),
+                      ],
+                      color: KbuttonColor,
                       borderRadius: BorderRadius.circular(30)),
                   child: Text(
                     "Get a Stylish Haircut",

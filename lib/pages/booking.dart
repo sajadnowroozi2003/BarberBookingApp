@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:barbershope/constans.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +40,7 @@ class _BookingState extends State<Booking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFB0C5A4),
+      backgroundColor: KbackgroundColor,
       body: Container(
         margin: EdgeInsets.only(left: 10.0, right: 10.0),
         child: Column(
@@ -56,7 +54,7 @@ class _BookingState extends State<Booking> {
                 padding: const EdgeInsets.only(top: 50.0),
                 child: Icon(
                   Icons.arrow_back_ios_new_rounded,
-                  color: Color(0xFFF8FAE5),
+                  color: KwhitColor,
                   size: 30.0,
                 ),
               ),
@@ -97,8 +95,7 @@ class _BookingState extends State<Booking> {
             Container(
               padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
               decoration: BoxDecoration(
-                  color: Color(0xFFB19470),
-                  borderRadius: BorderRadius.circular(20)),
+                  color: KcardColor, borderRadius: BorderRadius.circular(20)),
               width: MediaQuery.of(context).size.width,
               child: Column(children: [
                 Text(
