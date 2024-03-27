@@ -1,4 +1,5 @@
 import 'package:barbershope/pages/signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 
@@ -15,7 +16,7 @@ class _LogInState extends State<LogIn> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-
+  var auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +55,7 @@ class _LogInState extends State<LogIn> {
                   ),
                 ),
                 child: Form(
+                  key: _formkey,
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -119,22 +121,35 @@ class _LogInState extends State<LogIn> {
                         SizedBox(
                           height: 60.0,
                         ),
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: 10.0),
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                            gradient: KlinearGradientColor,
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "SIGN IN",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 24.0,
-                                  fontWeight: FontWeight.bold),
+                        GestureDetector(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 10.0),
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              gradient: KlinearGradientColor,
+                              borderRadius: BorderRadius.circular(30.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "SIGN IN",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
+                          onTap: () {
+                            //get email and passswrod
+                            if (_formkey.currentState!.validate()) {
+                              // register user
+                              // print("User Email ${_emailController.text}");
+                              // print("User passwrod ${_passwordController.text}");
+                              auth.createUserWithEmailAndPassword(
+                                  email: _emailController.text,
+                                  password: _passwordController.text);
+                            }
+                          },
                         ),
                         SizedBox(
                           height: 50.0,
