@@ -1,3 +1,4 @@
+import 'package:barbershope/constans.dart';
 import 'package:barbershope/models/rive_asset.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,11 @@ import 'package:rive/rive.dart';
 
 class SideMenuTile extends StatelessWidget {
   const SideMenuTile({
-    super.key, required this.menu, required this.press, required this.riveonInit, required this.inActive,
+    super.key,
+    required this.menu,
+    required this.press,
+    required this.riveonInit,
+    required this.inActive,
   });
 
   final RiveAsset menu;
@@ -19,12 +24,12 @@ class SideMenuTile extends StatelessWidget {
         const Padding(
           padding: const EdgeInsets.only(left: 24),
           child: Divider(
-            color: Colors.white,
+            color: KwhitColor,
             height: 1,
           ),
         ),
         ListTile(
-          onTap: () {},
+          onTap: press,
           leading: SizedBox(
             height: 34,
             width: 34,

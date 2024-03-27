@@ -45,14 +45,14 @@ List<RiveAsset> sideMenus = [
   ),
   RiveAsset(
     "assets/RiveAssets/icons.riv",
-    artboard: "SETTING",
-    stateMachineName: "SETTING_interactiity",
-    title: "Setting",
+    artboard: "SETTINGS",
+    stateMachineName: "SETTINGS_interactiity",
+    title: "Settings",
   ),
   RiveAsset(
     "assets/RiveAssets/icons.riv",
-    artboard: "ABOUT",
-    stateMachineName: "ABOUT_interactiity",
+    artboard: "USER",
+    stateMachineName: "USER_interactiity",
     title: "About",
   ),
   RiveAsset(

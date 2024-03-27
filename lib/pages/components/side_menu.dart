@@ -39,7 +39,17 @@ class _SideMenuState extends State<SideMenu> {
               ),
             ),
             ...sideMenus.map(
-              (e) => SideMenuTile(),
+              (menu) => SideMenuTile(
+                menu: menu,
+                riveonInit: (artboard) {
+               
+                },
+                press: () {
+
+
+                },
+                inActive: false,
+              ),
             ),
           ]),
         ),
