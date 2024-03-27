@@ -42,7 +42,7 @@ class _SideMenuState extends State<SideMenu> {
               (menu) => SideMenuTile(
                 menu: menu,
                 riveonInit: (artboard) {
-               
+                  RivaUtils.get;
                 },
                 press: () {
 
