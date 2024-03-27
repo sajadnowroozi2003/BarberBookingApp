@@ -58,7 +58,7 @@ class _LogInState extends State<LogIn> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: 50,
+                          height: 30,
                         ),
                         TextFormField(
                           decoration: kTextFildDecoration.copyWith(
@@ -68,7 +68,7 @@ class _LogInState extends State<LogIn> {
                                 color: KoutlineBorderColor,
                               ),
                               hintText: 'Enter your email',
-                              labelText: 'email',
+                              labelText: 'Email',
                               labelStyle: TextStyle(color: KwhitColor)),
                           controller: _emailController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -90,7 +90,7 @@ class _LogInState extends State<LogIn> {
                                 color: KoutlineBorderColor,
                               ),
                               hintText: 'Enter your password',
-                              labelText: 'password',
+                              labelText: 'Password',
                               labelStyle: TextStyle(color: KwhitColor)),
                           obscureText: true,
                           controller: _passwordController,
