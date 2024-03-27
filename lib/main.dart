@@ -3,6 +3,7 @@
 import 'dart:math';
 
 import 'package:barbershope/pages/booking.dart';
+import 'package:barbershope/pages/components/side_menu.dart';
 import 'package:barbershope/pages/home.dart';
 import 'package:barbershope/pages/login.dart';
 import 'package:barbershope/pages/onboarding.dart';
@@ -33,14 +34,9 @@ class MyApp extends StatelessWidget {
         builder: (context, snapshot) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            // routes: {
-            //   '/': (context) => LogIn(),
-            //   '/onboarding': (context) => Onboearding(),
-            //   '/home': (context) => Home(),
-            //   '/booking': (context) => Booking(service: ''),
-            // },
-            home:
-                AuthService().getCurrentUser != null ? Onboearding() : LogIn(),
+            // home:
+            //     AuthService().getCurrentUser != null ? Onboearding() : LogIn(),
+            home: SideMenu(),
           );
         });
   }
