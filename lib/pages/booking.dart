@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:barbershope/constans.dart';
 import 'package:flutter/material.dart';
 
 class Booking extends StatefulWidget {
@@ -86,7 +87,7 @@ class _BookingState extends State<Booking> {
             Text(
               widget.service,
               style: TextStyle(
-                  color: Color(0xFFF8FAE5),
+                  color: KwhitColor,
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold),
             ),
@@ -143,8 +144,7 @@ class _BookingState extends State<Booking> {
             Container(
               padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
               decoration: BoxDecoration(
-                  color: Color(0xFFB19470),
-                  borderRadius: BorderRadius.circular(20)),
+                  color: KcardColor, borderRadius: BorderRadius.circular(20)),
               width: MediaQuery.of(context).size.width,
               child: Column(children: [
                 Text(
@@ -193,7 +193,7 @@ class _BookingState extends State<Booking> {
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                 decoration: BoxDecoration(
-                    color: Color(0xFFfe8f33),
+                    color: KbuttonColor,
                     borderRadius: BorderRadius.circular(20)),
                 child: Center(
                   child: Text(

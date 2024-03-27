@@ -9,11 +9,25 @@ class Onboearding extends StatefulWidget {
   State<Onboearding> createState() => _OnboeardingState();
 }
 
-class _OnboeardingState extends State<Onboearding> {
+class _OnboeardingState extends State<Onboearding>
+    with SingleTickerProviderStateMixin {
+  AnimationController? controller;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    controller?.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFB0C5A4),
+      backgroundColor: Color(0xFFB0C5A4).withOpacity(controller!.value),
       body: Container(
           margin: EdgeInsets.only(top: 120.0),
           child: Column(

@@ -1,4 +1,6 @@
+import 'package:barbershope/constans.dart';
 import 'package:barbershope/pages/login.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -9,6 +11,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,12 +27,7 @@ class _SignUpState extends State<SignUp> {
                 height: MediaQuery.of(context).size.height / 2,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xFFFA7070),
-                      Color(0xFFC6EBC5),
-                    ],
-                  ),
+                  gradient: KlinearGradientColor,
                 ),
                 child: Text(
                   "CREATE YOUR\nACCOUNT",
@@ -45,140 +46,157 @@ class _SignUpState extends State<SignUp> {
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Color(0xFFB0C5A4),
+                  color: KbackgroundColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40.0),
                     topRight: Radius.circular(40.0),
                   ),
                 ),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Name",
-                        style: TextStyle(
-                            color: Color(0xFFF8FAE5),
-                            fontSize: 23.0,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                            hintText: "Name",
-                            prefixIcon: Icon(Icons.person_outline)),
-                      ),
-                      SizedBox(
-                        height: 40.0,
-                      ),
-                      Text(
-                        "Email",
-                        style: TextStyle(
-                            color: Color(0xFFF8FAE5),
-                            fontSize: 23.0,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                            hintText: "Email",
-                            prefixIcon: Icon(Icons.email_outlined)),
-                      ),
-                      SizedBox(
-                        height: 40.0,
-                      ),
-                      Text(
-                        "Phone",
-                        style: TextStyle(
-                            color: Color(0xFFF8FAE5),
-                            fontSize: 23.0,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                            hintText: "Phone",
-                            prefixIcon: Icon(Icons.phone_android_outlined)),
-                      ),
-                      SizedBox(
-                        height: 40.0,
-                      ),
-                      Text(
-                        "Password",
-                        style: TextStyle(
-                            color: Color(0xFFF8FAE5),
-                            fontSize: 23.0,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                            hintText: "Password",
-                            prefixIcon: Icon(Icons.password_outlined)),
-                      ),
-                      SizedBox(
-                        height: 30.0,
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 10.0),
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color(0xFFFA7070),
-                              Color(0xFFC6EBC5),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(30.0),
+                child: Form(
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 30,
                         ),
-                        child: Center(
-                          child: Text(
-                            "SIGN UP",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24.0,
-                                fontWeight: FontWeight.bold),
-                          ),
+                        TextFormField(
+                          decoration: kTextFildDecoration.copyWith(
+                              icon: Icon(
+                                Icons.person_outlined,
+                                size: 20,
+                                color: KoutlineBorderColor,
+                              ),
+                              hintText: 'Enter your Name',
+                              labelText: 'name',
+                              labelStyle: TextStyle(color: KwhitColor)),
+                          controller: _emailController,
                         ),
-                      ),
-                      SizedBox(
-                        height: 50.0,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            "Already have an account?",
-                            style: TextStyle(
-                                color: Color(0xFFF8FAE5),
-                                fontSize: 17.0,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LogIn(),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                          decoration: kTextFildDecoration.copyWith(
+                              icon: Icon(
+                                Icons.email_outlined,
+                                size: 20,
+                                color: KoutlineBorderColor,
+                              ),
+                              hintText: 'Enter your email',
+                              labelText: 'email',
+                              labelStyle: TextStyle(color: KwhitColor)),
+                          controller: _emailController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: (email) {
+                            return email != null &&
+                                    EmailValidator.validate(email)
+                                ? null
+                                : 'please enter a vaild email';
+                          },
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                          decoration: kTextFildDecoration.copyWith(
+                              icon: Icon(
+                                Icons.phone_outlined,
+                                size: 20,
+                                color: KoutlineBorderColor,
+                              ),
+                              hintText: 'Enter your Phone',
+                              labelText: 'phone',
+                              labelStyle: TextStyle(color: KwhitColor)),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                          decoration: kTextFildDecoration.copyWith(
+                              icon: Icon(
+                                Icons.password_outlined,
+                                size: 20,
+                                color: KoutlineBorderColor,
+                              ),
+                              hintText: 'Enter your password',
+                              labelText: 'password',
+                              labelStyle: TextStyle(color: KwhitColor)),
+                          obscureText: true,
+                          controller: _passwordController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: (password) {
+                            return password != null && password.length > 5
+                                ? null
+                                : 'The password be of 6 characters at least';
+                          },
+                        ),
+                        SizedBox(
+                          height: 30.0,
+                        ),
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 10.0),
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xFFFA7070),
+                                Color(0xFFC6EBC5),
+                              ],
                             ),
-                          );
-                        },
-                        child: Row(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "SIGN UP",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50.0,
+                        ),
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
-                              "Sign In",
+                              "Already have an account?",
                               style: TextStyle(
                                   color: Color(0xFFF8FAE5),
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 22.0,
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 17.0,
+                                  fontWeight: FontWeight.w500),
                             ),
                           ],
                         ),
-                      ),
-                    ]),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LogIn(),
+                              ),
+                            );
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                "Sign In",
+                                style: TextStyle(
+                                    color: Color(0xFFF8FAE5),
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 22.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ]),
+                ),
               ),
             ],
           ),
