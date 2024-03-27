@@ -11,8 +11,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,20 +24,20 @@ class _HomeState extends State<Home> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Hello,",
-                    style: TextStyle(
-                        color: Color.fromARGB(197, 255, 255, 255),
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    "Sajjad Nowroozi",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold),
-                  ),
+                  // Text(
+                  //   "Hello,",
+                  //   style: TextStyle(
+                  //       color: Color.fromARGB(197, 255, 255, 255),
+                  //       fontSize: 24.0,
+                  //       fontWeight: FontWeight.w500),
+                  // ),
+                  // Text(
+                  //   "Sajjad Nowroozi",
+                  //   style: TextStyle(
+                  //       color: Colors.white,
+                  //       fontSize: 24.0,
+                  //       fontWeight: FontWeight.bold),
+                  // ),
                 ],
               ),
               IconButton(

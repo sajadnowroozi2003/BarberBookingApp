@@ -1,4 +1,5 @@
 import 'package:barbershope/constans.dart';
+import 'package:barbershope/pages/booking.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -20,7 +21,7 @@ class _OnboeardingState extends State<Onboearding>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 3),
     );
     controller?.forward();
   }
