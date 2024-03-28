@@ -23,29 +23,13 @@ class _HomeState extends State<Home> {
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Text(
-                  //   "Hello,",
-                  //   style: TextStyle(
-                  //       color: Color.fromARGB(197, 255, 255, 255),
-                  //       fontSize: 24.0,
-                  //       fontWeight: FontWeight.w500),
-                  // ),
-                  // Text(
-                  //   "Sajjad Nowroozi",
-                  //   style: TextStyle(
-                  //       color: Colors.white,
-                  //       fontSize: 24.0,
-                  //       fontWeight: FontWeight.bold),
-                  // ),
-                ],
+                children: [],
               ),
               IconButton(
                 onPressed: () {
                   if (Navigator.canPop(context)) {
                     Navigator.pop(context);
                   }
-
                   AuthService().signOut();
                 },
                 icon: Icon(Icons.logout),

@@ -3,7 +3,6 @@
 import 'dart:math';
 
 import 'package:barbershope/pages/booking.dart';
-import 'package:barbershope/pages/components/side_menu.dart';
 import 'package:barbershope/pages/home.dart';
 import 'package:barbershope/pages/login.dart';
 import 'package:barbershope/pages/onboarding.dart';
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             // home:
             //     AuthService().getCurrentUser != null ? Onboearding() : LogIn(),
-            home: SideMenu(),
+            home: Onboearding(),
           );
         });
   }
