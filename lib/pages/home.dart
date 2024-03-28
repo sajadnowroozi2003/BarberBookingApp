@@ -1,4 +1,5 @@
 import 'package:barbershope/pages/booking.dart';
+import 'package:barbershope/pages/login.dart';
 import 'package:barbershope/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,12 @@ class _HomeState extends State<Home> {
                     Navigator.pop(context);
                   }
                   AuthService().signOut();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LogIn(),
+                    ),
+                  );
                 },
                 icon: Icon(Icons.logout),
               ),

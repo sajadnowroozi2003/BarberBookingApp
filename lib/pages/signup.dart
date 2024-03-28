@@ -80,6 +80,13 @@ class _SignUpState extends State<SignUp> {
                                 labelText: 'Name',
                                 labelStyle: TextStyle(color: KwhitColor)),
                             controller: _nameController,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (name) {
+                              return name != null && name.length > 3
+                                  ? null
+                                  : 'The Name be of 3 characters at least';
+                            },
                           ),
                           SizedBox(
                             height: 10,
@@ -118,6 +125,13 @@ class _SignUpState extends State<SignUp> {
                                 labelText: 'Phone',
                                 labelStyle: TextStyle(color: KwhitColor)),
                             controller: _phoneController,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            validator: (phone) {
+                              return phone != null && phone.length == 10
+                                  ? null
+                                  : 'Your PhoneNumber should be 10 characters 07........';
+                            },
                           ),
                           const SizedBox(
                             height: 10,
