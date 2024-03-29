@@ -1,7 +1,7 @@
 import 'package:barbershope/constans.dart';
 import 'package:barbershope/pages/booking.dart';
 import 'package:flutter/material.dart';
-
+import 'signup.dart';
 import '../services/auth_service.dart';
 import 'login.dart';
 
@@ -28,7 +28,7 @@ class ServiceList extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "barber",
+                  "Service",
                   style: TextStyle(
                       color: KwhitColor,
                       fontSize: 20,
@@ -45,7 +45,8 @@ class ServiceList extends StatelessWidget {
                 ),
               ],
             ),
-            Text("$userName"),
+            // print user name in appbar
+            // Text("$userName"),
             IconButton(
               onPressed: () {
                 if (Navigator.canPop(context)) {
@@ -62,7 +63,8 @@ class ServiceList extends StatelessWidget {
               },
               icon: Icon(Icons.logout),
             ),
-            IconButton(onPressed: (){print("Your name is : $userName");}, icon: Icon(Icons.person),),
+            //added  to check user name
+            // IconButton(onPressed: (){print("Your name is : $userName");}, icon: Icon(Icons.person),),
           ],
         ),
       ),

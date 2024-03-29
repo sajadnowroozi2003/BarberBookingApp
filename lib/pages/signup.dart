@@ -197,10 +197,8 @@ class _SignUpState extends State<SignUp> {
                             ),
                             onTap: () async {
                               //get user Name
-                             userName = _nameController.text;
-                              print('Your name is :$userName');
-                             Navigator.push(context, MaterialPageRoute(builder: (context)=>ServiceList(),settings: RouteSettings(arguments: userName),),);
-
+                              userName = _nameController.text;
+                              // print('Your name is :$userName');
                               //get email and passswrod
                               if (_formkey.currentState!.validate()) {
                                 // register user
@@ -217,6 +215,9 @@ class _SignUpState extends State<SignUp> {
                                           password: _passwordController.text)
                                       .then(
                                     (value) {
+
+
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ServiceList(),settings: RouteSettings(arguments: userName),),);
                                       Navigator.pop(context);
                                       Navigator.push(
                                         context,
