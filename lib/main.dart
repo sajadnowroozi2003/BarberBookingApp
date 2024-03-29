@@ -29,14 +29,13 @@ class MyApp extends StatelessWidget {
         builder: (context, snapshot) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            routes: {
-              '/service_list': (context) => ServiceList(),
-              '/signup': (context) => SignUp(),
-            },
-            // home:
-            //     AuthService().getCurrentUser != null ? Onboearding() : LogIn(),
+            // routes: {
+            //   '/service_list': (context) => ServiceList(),
+            //   '/signup': (context) => SignUp(),
+            // },
+            home:
+                AuthService().getCurrentUser != null ? Onboearding() : LogIn(),
 
-            home: SignUp(),
           );
         });
   }

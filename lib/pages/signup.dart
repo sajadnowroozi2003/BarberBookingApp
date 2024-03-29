@@ -23,7 +23,7 @@ class _SignUpState extends State<SignUp> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   String errorMessage = "";
   bool errorOccurred = false, showSpinner = false;
-  String? userName;
+  late String userName;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -197,10 +197,9 @@ class _SignUpState extends State<SignUp> {
                             ),
                             onTap: () async {
                               //get user Name
-                              userName = _nameController.text;
-                              // print('Your name is :$userName');
-                              Navigator.pushNamed(context, '/service_list',
-                                  arguments: userName);
+                             userName = _nameController.text;
+                              print('Your name is :$userName');
+                             Navigator.push(context, MaterialPageRoute(builder: (context)=>ServiceList(),settings: RouteSettings(arguments: userName),),);
 
                               //get email and passswrod
                               if (_formkey.currentState!.validate()) {
