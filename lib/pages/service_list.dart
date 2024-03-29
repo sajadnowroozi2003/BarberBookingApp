@@ -11,54 +11,56 @@ void main() {
 
 class ServiceList extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    final String? userName =
+  Widget build(BuildContext context){
+    final String? userName  =  ModalRoute.of(context)!.settings.arguments as String?;
         ModalRoute.of(context)!.settings.arguments as String?;
     return Scaffold(
       backgroundColor: KbackgroundColor,
       appBar: AppBar(
         backgroundColor: KbackgroundColor,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "barber",
-                  style: TextStyle(
-                      color: KwhitColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  "      Booking",
-                  style: TextStyle(
-                      color: KoutlineBorderColor,
-                      fontSize: 25,
-                      fontFamily: "lobster",
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            Text("Welcome $userName"),
-            IconButton(
-              onPressed: () {
-                if (Navigator.canPop(context)) {
-                  Navigator.pop(context);
-                  AuthService().signOut();
-                }
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LogIn(),
+        title: Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "barber",
+                    style: TextStyle(
+                        color: KwhitColor,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
                   ),
-                );
-              },
-              icon: Icon(Icons.logout),
-            ),
-          ],
+                  Text(
+                    "      Booking",
+                    style: TextStyle(
+                        color: KoutlineBorderColor,
+                        fontSize: 25,
+                        fontFamily: "lobster",
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              Text("$userName"),
+              IconButton(
+                onPressed: () {
+                  if (Navigator.canPop(context)) {
+                    Navigator.pop(context);
+                    AuthService().signOut();
+                  }
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LogIn(),
+                    ),
+                  );
+                },
+                icon: Icon(Icons.logout),
+              ),
+            ],
+          ),
         ),
       ),
       body: ScrollableCards(),

@@ -1,6 +1,6 @@
 import 'package:barbershope/constans.dart';
 import 'package:barbershope/pages/booking.dart';
-import 'package:barbershope/pages/servise_list.dart';
+import 'package:barbershope/pages/service_list.dart';
 
 import 'package:flutter/material.dart';
 

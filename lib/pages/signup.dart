@@ -1,7 +1,7 @@
 import 'package:barbershope/constans.dart';
 
 import 'package:barbershope/pages/login.dart';
-import 'package:barbershope/pages/servise_list.dart';
+import 'package:barbershope/pages/service_list.dart';
 import 'package:barbershope/services/auth_service.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -198,9 +198,10 @@ class _SignUpState extends State<SignUp> {
                             onTap: () async {
                               //get user Name
                               userName = _nameController.text;
-                              Navigator.pushNamed(context, '/servise_list',
+                              // print('Your name is :$userName');
+                              Navigator.pushNamed(context, '/service_list',
                                   arguments: userName);
-                              print(userName);
+
                               //get email and passswrod
                               if (_formkey.currentState!.validate()) {
                                 // register user
