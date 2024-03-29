@@ -1,6 +1,5 @@
 import 'package:barbershope/constans.dart';
 
-
 import 'package:barbershope/pages/login.dart';
 import 'package:barbershope/pages/servise_list.dart';
 import 'package:barbershope/services/auth_service.dart';
@@ -24,6 +23,7 @@ class _SignUpState extends State<SignUp> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   String errorMessage = "";
   bool errorOccurred = false, showSpinner = false;
+  String? userName;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -196,6 +196,11 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                             onTap: () async {
+                              //get user Name
+                              userName = _nameController.text;
+                              Navigator.pushNamed(context, '/servise_list',
+                                  arguments: userName);
+                              print(userName);
                               //get email and passswrod
                               if (_formkey.currentState!.validate()) {
                                 // register user

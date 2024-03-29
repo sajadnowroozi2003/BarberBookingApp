@@ -1,7 +1,7 @@
-
 import 'package:barbershope/pages/login.dart';
 import 'package:barbershope/pages/onboarding.dart';
 import 'package:barbershope/pages/servise_list.dart';
+import 'package:barbershope/pages/signup.dart';
 import 'package:barbershope/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -29,6 +29,10 @@ class MyApp extends StatelessWidget {
         builder: (context, snapshot) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
+            routes: {
+              '/servise_list': (context) => ServiceList(),
+              '/signuo': (context) => SignUp(),
+            },
             // home:
             //     AuthService().getCurrentUser != null ? Onboearding() : LogIn(),
 

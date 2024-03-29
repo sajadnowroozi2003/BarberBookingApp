@@ -12,6 +12,8 @@ void main() {
 class ServiceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final String? userName =
+        ModalRoute.of(context)!.settings.arguments as String?;
     return Scaffold(
       backgroundColor: KbackgroundColor,
       appBar: AppBar(
@@ -39,12 +41,14 @@ class ServiceList extends StatelessWidget {
                 ),
               ],
             ),
+            Text("Welcome $userName"),
             IconButton(
               onPressed: () {
                 if (Navigator.canPop(context)) {
                   Navigator.pop(context);
+                  AuthService().signOut();
                 }
-                AuthService().signOut();
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -188,7 +192,10 @@ class _ScrollableCardsState extends State<ScrollableCards> {
             SizedBox(height: 10),
             Text(
               cardData['text'],
-              style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
             ),
           ],
         ),
