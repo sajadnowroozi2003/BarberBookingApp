@@ -1,8 +1,8 @@
 import 'package:barbershope/constans.dart';
 import 'package:barbershope/pages/booking.dart';
-import 'package:flutter/material.dart';
+import 'package:barbershope/pages/servise_list.dart';
 
-import 'home.dart';
+import 'package:flutter/material.dart';
 
 class Onboearding extends StatefulWidget {
   const Onboearding({super.key});
@@ -29,7 +29,7 @@ class _OnboeardingState extends State<Onboearding>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: KbackgroundColor.withOpacity(controller!.value),
+      backgroundColor: KbackgroundColor,
       body: Container(
           margin: EdgeInsets.only(top: 120.0),
           child: Column(
@@ -44,7 +44,7 @@ class _OnboeardingState extends State<Onboearding>
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => ServiceList(),
                     ),
                   );
                 },

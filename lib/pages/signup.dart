@@ -1,11 +1,13 @@
 import 'package:barbershope/constans.dart';
+
+
 import 'package:barbershope/pages/login.dart';
+import 'package:barbershope/pages/servise_list.dart';
 import 'package:barbershope/services/auth_service.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'home.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -214,7 +216,7 @@ class _SignUpState extends State<SignUp> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => Home(),
+                                          builder: (context) => ServiceList(),
                                         ),
                                       );
                                     },
